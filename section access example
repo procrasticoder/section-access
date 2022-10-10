@@ -1,0 +1,34 @@
+Section Access;
+Load * Inline [
+USERID, ACCESS, KEY
+AJANTA\QLIKSENSE, USER, 1
+AJANTA\QLIKPROD, ADMIN, 1
+
+INTERNAL\SA_SCHEDULER, ADMIN,*
+];
+
+Section Application;
+
+star is *;
+DataReduction:
+Load * Inline [
+KEY, COUNTRY
+1, *
+2, India
+3, USA
+4, China
+]
+;
+
+
+
+Population:
+Load * Inline [
+COUNTRY, Population, Data Source
+India, 1331542153, Google
+China, 1501254921, Google
+USA,   13542642, Google
+];
+
+
+Exit Script;
